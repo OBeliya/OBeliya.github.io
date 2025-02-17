@@ -1,0 +1,160 @@
+/* ===========================
+   BASE / FONT STYLING
+   =========================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Mali','Playwrite DE Grund', sans-serif;
+    overflow: hidden;
+  }
+  
+  /* ===========================
+     APP CONTAINER - with paper-like texture
+     =========================== */
+  .app-container {
+    /* Center everything horizontally & vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 20px; /* Ensure symmetric spacing on all sides */
+    
+    /* Pinkish background with subtle pattern */
+    background-color: #d4145a;
+    background-image: 
+      radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+    box-sizing: border-box;
+  }
+  
+  /* ===========================
+     CARDS CONTAINER
+     =========================== */
+  .cards-container {
+    position: relative;
+    width: 95%;
+    height: 92%;
+    overflow: visible; /* so the swiped card can go out of bounds */
+  }
+  
+  /* Each card is absolutely positioned, all overlap each other.
+     We'll reorder them with JS. */
+  .card-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: auto;
+    border: 8px solid #424242;
+    border-radius: 20px;
+    background: #DCA3A3;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+  }
+  
+  /* Inner content of each card */
+  .card-content {
+    width: 100%;
+    height: 100%;
+    background: #ffe6eb;
+    border: 8px solid #4d4a4a;
+    border-radius: 20px;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.15);
+    
+    /* Centering the text content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .card-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    color: #d4145a;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .card-content p {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  /* Responsive: smaller screens */
+  @media screen and (max-width: 480px) { 
+    .app-container {
+      padding: 8px;
+      border-radius: 40px;
+    }
+  
+    .cards-container {
+      width: 92%;
+      height: 92%;
+      border-radius: 40px;
+    }
+  
+    .card-wrapper {
+      padding: 15px;
+      border-radius: 40px;
+    }
+  
+    .card-content {
+      padding: 25px;
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  
+    .card-content h1 {
+      font-size: 5.5rem;
+      margin-bottom: 1.8rem;
+    }
+  
+    .card-content p {
+      font-size: 2.2rem;
+      line-height: 2;
+    }
+  }
+  
+  /* Extra tweak for iPhone 14 Pro Max or close sizes */
+  @media screen and (max-width: 430px) {
+    .card-content h1 {
+      font-size: 6rem; 
+    }
+    .card-content p {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* Additional Tweaks for smaller iPhones (SE, 6, 7, 8) */
+  @media screen and (max-width: 375px) {
+    .card-content h1 {
+      font-size: 5rem; 
+    }
+    .card-content p {
+      font-size: 2rem;
+    }
+  }
+  
