@@ -9,6 +9,7 @@ const cards = [
   document.getElementById('card5'),
   document.getElementById('card6'),
   document.getElementById('card7'),
+  document.getElementById('card8'),
 ];
 
 // We'll show them in sequence using 'currentIndex'
