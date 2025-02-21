@@ -1,6 +1,7 @@
 // Gather references to all the card elements
 // We now have 8 cards in total (card0 through card7)
 const cards = [
+  document.getElementById('card9'),
   document.getElementById('card0'),
   document.getElementById('card1'),
   document.getElementById('card2'),
@@ -10,6 +11,7 @@ const cards = [
   document.getElementById('card6'),
   document.getElementById('card7'),
   document.getElementById('card8'),
+  document.getElementById('card10'),
 ];
 
 // We'll show them in sequence using 'currentIndex'
